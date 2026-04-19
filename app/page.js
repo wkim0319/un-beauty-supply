@@ -1,66 +1,66 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client'
 
-export default function Home() {
+import { useState, useEffect } from 'react'
+import { LOCATIONS, TWEAK_DEFAULTS } from '@/lib/data'
+import Topbar from '@/components/Topbar'
+import Hero from '@/components/Hero'
+import BrandStrip from '@/components/BrandStrip'
+import Categories from '@/components/Categories'
+import Locations from '@/components/Locations'
+import MidCTA from '@/components/MidCTA'
+import Trust from '@/components/Trust'
+import Why from '@/components/Why'
+import FinalCTA from '@/components/FinalCTA'
+import Footer from '@/components/Footer'
+import StickyCallBar from '@/components/StickyCallBar'
+import Tweaks from '@/components/Tweaks'
+
+export default function HomePage() {
+  const [activeId, setActiveId] = useState('detroit')
+  const [tweak, setTweak] = useState(TWEAK_DEFAULTS)
+  const [tweaksOpen, setTweaksOpen] = useState(false)
+
+  // Hydrate from localStorage after mount
+  useEffect(() => {
+    try {
+      const savedLoc = localStorage.getItem('un.loc')
+      if (savedLoc) setActiveId(savedLoc)
+      const savedTweak = localStorage.getItem('un.tweaks')
+      if (savedTweak) setTweak((t) => ({ ...t, ...JSON.parse(savedTweak) }))
+    } catch {}
+  }, [])
+
+  useEffect(() => {
+    try { localStorage.setItem('un.loc', activeId) } catch {}
+  }, [activeId])
+
+  useEffect(() => {
+    try { localStorage.setItem('un.tweaks', JSON.stringify(tweak)) } catch {}
+  }, [tweak])
+
+  const activeLoc = LOCATIONS.find((l) => l.id === activeId) || LOCATIONS[0]
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
+    <div className={`palette-${tweak.palette} density-${tweak.density} site-root`}>
+      <Topbar activeLoc={activeLoc} />
+      <main>
+        <Hero activeLoc={activeLoc} variant={tweak.heroVariant} showStamp={tweak.showStamp} />
+        <BrandStrip />
+        <Categories />
+        <Locations activeId={activeId} setActiveId={setActiveId} />
+        <MidCTA activeLoc={activeLoc} />
+        <Trust />
+        <Why />
+        <FinalCTA activeLoc={activeLoc} />
       </main>
+      <Footer />
+      <StickyCallBar activeLoc={activeLoc} />
+      <button className="tweaks-toggle" onClick={() => setTweaksOpen((o) => !o)}>
+        Tweaks
+      </button>
+      {tweaksOpen && (
+        <Tweaks state={tweak} setState={setTweak} onClose={() => setTweaksOpen(false)} />
+      )}
     </div>
-  );
+  )
 }
