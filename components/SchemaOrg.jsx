@@ -6,12 +6,12 @@ const schema = {
     // ── Organization (parent brand) ───────────────────────────────────────────
     {
       "@type": "Organization",
-      "@id": "https://unbeautysupply.com/#organization",
+      "@id": "https://unbeauty.supply/#organization",
       "name": "UN Beauty Supply",
-      "url": "https://unbeautysupply.com",
+      "url": "https://unbeauty.supply",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://unbeautysupply.com/og-image.jpg"
+        "url": "https://unbeauty.supply/og-image.jpg"
       },
       "sameAs": [
         "https://www.instagram.com/unbeautysupply",
@@ -23,19 +23,19 @@ const schema = {
     // ── WebSite ───────────────────────────────────────────────────────────────
     {
       "@type": "WebSite",
-      "@id": "https://unbeautysupply.com/#website",
-      "url": "https://unbeautysupply.com",
+      "@id": "https://unbeauty.supply/#website",
+      "url": "https://unbeauty.supply",
       "name": "UN Beauty Supply",
-      "publisher": { "@id": "https://unbeautysupply.com/#organization" }
+      "publisher": { "@id": "https://unbeauty.supply/#organization" }
     },
 
     // ── Detroit (Flagship) ────────────────────────────────────────────────────
     {
       "@type": "BeautyShop",
-      "@id": "https://unbeautysupply.com/#location-detroit",
+      "@id": "https://unbeauty.supply/#location-detroit",
       "name": "UN Beauty Supply — Grand River",
-      "url": "https://unbeautysupply.com",
-      "parentOrganization": { "@id": "https://unbeautysupply.com/#organization" },
+      "url": "https://unbeauty.supply",
+      "parentOrganization": { "@id": "https://unbeauty.supply/#organization" },
       "telephone": "+13139228995",
       "address": {
         "@type": "PostalAddress",
@@ -61,23 +61,23 @@ const schema = {
       ],
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "1200"
+        "ratingValue": "4.5",
+        "reviewCount": "211"
       },
       "priceRange": "$$",
       "paymentAccepted": "Cash, Credit Card, EBT",
       "currenciesAccepted": "USD",
-      "image": "https://unbeautysupply.com/og-image.jpg",
+      "image": "https://unbeauty.supply/og-image.jpg",
       "hasMap": "https://maps.google.com/?q=UN+Beauty+Supply+Grand+River+Detroit+MI"
     },
 
     // ── Madison Heights ───────────────────────────────────────────────────────
     {
       "@type": "BeautyShop",
-      "@id": "https://unbeautysupply.com/#location-madison-heights",
+      "@id": "https://unbeauty.supply/#location-madison-heights",
       "name": "UN Beauty Supply — Madison Heights",
-      "url": "https://unbeautysupply.com",
-      "parentOrganization": { "@id": "https://unbeautysupply.com/#organization" },
+      "url": "https://unbeauty.supply",
+      "parentOrganization": { "@id": "https://unbeauty.supply/#organization" },
       "telephone": "+12482915022",
       "address": {
         "@type": "PostalAddress",
@@ -103,23 +103,23 @@ const schema = {
       ],
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "1200"
+        "ratingValue": "4.0",
+        "reviewCount": "122"
       },
       "priceRange": "$$",
       "paymentAccepted": "Cash, Credit Card, EBT",
       "currenciesAccepted": "USD",
-      "image": "https://unbeautysupply.com/og-image.jpg",
+      "image": "https://unbeauty.supply/og-image.jpg",
       "hasMap": "https://maps.google.com/?q=UN+Beauty+Supply+John+R+Madison+Heights+MI"
     },
 
     // ── Clinton Township ──────────────────────────────────────────────────────
     {
       "@type": "BeautyShop",
-      "@id": "https://unbeautysupply.com/#location-clinton-township",
+      "@id": "https://unbeauty.supply/#location-clinton-township",
       "name": "UN Beauty Supply — Clinton Township",
-      "url": "https://unbeautysupply.com",
-      "parentOrganization": { "@id": "https://unbeautysupply.com/#organization" },
+      "url": "https://unbeauty.supply",
+      "parentOrganization": { "@id": "https://unbeauty.supply/#organization" },
       "telephone": "+15867924432",
       "address": {
         "@type": "PostalAddress",
@@ -145,13 +145,13 @@ const schema = {
       ],
       "aggregateRating": {
         "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "reviewCount": "1200"
+        "ratingValue": "4.2",
+        "reviewCount": "243"
       },
       "priceRange": "$$",
       "paymentAccepted": "Cash, Credit Card, EBT",
       "currenciesAccepted": "USD",
-      "image": "https://unbeautysupply.com/og-image.jpg",
+      "image": "https://unbeauty.supply/og-image.jpg",
       "hasMap": "https://maps.google.com/?q=UN+Beauty+Supply+Gratiot+Clinton+Township+MI"
     }
   ]

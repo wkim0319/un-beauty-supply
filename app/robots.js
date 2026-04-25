@@ -1,6 +1,14 @@
 export default function robots() {
   return {
-    rules: { userAgent: '*', allow: '/' },
-    sitemap: 'https://unbeautysupply.com/sitemap.xml',
+    rules: [
+      { userAgent: '*', allow: '/' },
+      { userAgent: 'GPTBot', allow: '/' },
+      { userAgent: 'ClaudeBot', allow: '/' },
+      { userAgent: 'PerplexityBot', allow: '/' },
+      { userAgent: 'Google-Extended', allow: '/' },
+      { userAgent: 'Applebot-Extended', allow: '/' },
+      { userAgent: 'ChatGPT-User', allow: '/' },
+    ],
+    sitemap: 'https://unbeauty.supply/sitemap.xml',
   }
 }

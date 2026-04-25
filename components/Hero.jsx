@@ -57,6 +57,7 @@ export default function Hero() {
           <div>
             <div className="kicker">
               <span className="yr">20+ YEARS</span>
+              {' '}
               <span>Detroit&apos;s Beauty Supply · Est. 2004</span>
             </div>
 

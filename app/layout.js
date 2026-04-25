@@ -32,7 +32,7 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata = {
-  metadataBase: new URL('https://unbeautysupply.com'),
+  metadataBase: new URL('https://unbeauty.supply'),
   alternates: { canonical: '/' },
   title: "UN Beauty Supply — Detroit's Go-To Beauty Supply for 20+ Years",
   description:
@@ -40,6 +40,21 @@ export const metadata = {
   icons: {
     icon: '/favicon.ico',
     apple: '/apple-touch-icon.png',
+  },
+  openGraph: {
+    title: "UN Beauty Supply — Detroit's Go-To Beauty Supply for 20+ Years",
+    description:
+      'Hair, wigs, braiding hair, styling tools & more. 3 stores across Metro Detroit. Real expert help in-store.',
+    url: 'https://unbeauty.supply',
+    siteName: 'UN Beauty Supply',
+    type: 'website',
+    locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "UN Beauty Supply — Detroit's Go-To Beauty Supply for 20+ Years",
+    description:
+      'Hair, wigs, braiding hair, styling tools & more. 3 stores across Metro Detroit.',
   },
 }
 
