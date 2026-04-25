@@ -3,6 +3,7 @@
 import { LOCATIONS } from '@/lib/data'
 import { DAY_ORDER, openStatus, getToday } from '@/lib/utils'
 import { Ico } from './Icons'
+import { useApp } from './AppContext'
 
 function MapPin({ color = '#DC2626' }) {
   return (
@@ -20,7 +21,8 @@ function MapPin({ color = '#DC2626' }) {
   )
 }
 
-export default function Locations({ activeId, setActiveId }) {
+export default function Locations() {
+  const { activeId, setActiveId } = useApp()
   const active = LOCATIONS.find((l) => l.id === activeId)
   const today = getToday()
   const st = openStatus(active)
@@ -67,17 +69,30 @@ export default function Locations({ activeId, setActiveId }) {
 
           <div className="loc-detail">
             <div className="loc-map">
-              <div
-                style={{
-                  position: 'absolute',
-                  left: '50%',
-                  top: '48%',
-                  transform: 'translate(-50%, -100%)',
-                }}
-              >
-                <MapPin />
-              </div>
-              <div className="loc-map-label">Embedded Google Map · {active.city}</div>
+              {active.mapSrc ? (
+                <iframe
+                  src={active.mapSrc}
+                  style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', border: 0 }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title={`Map of ${active.name}`}
+                />
+              ) : (
+                <>
+                  <div
+                    style={{
+                      position: 'absolute',
+                      left: '50%',
+                      top: '48%',
+                      transform: 'translate(-50%, -100%)',
+                    }}
+                  >
+                    <MapPin />
+                  </div>
+                  <div className="loc-map-label">Embedded Google Map · {active.city}</div>
+                </>
+              )}
             </div>
 
             <div className="loc-info">

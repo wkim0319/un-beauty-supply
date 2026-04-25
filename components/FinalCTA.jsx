@@ -1,6 +1,10 @@
-import { Ico } from './Icons'
+'use client'
 
-export default function FinalCTA({ activeLoc }) {
+import { Ico } from './Icons'
+import { useApp } from './AppContext'
+
+export default function FinalCTA() {
+  const { activeLoc } = useApp()
   return (
     <section>
       <div className="wrap">

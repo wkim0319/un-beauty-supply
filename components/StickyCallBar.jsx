@@ -1,6 +1,10 @@
-import { Ico } from './Icons'
+'use client'
 
-export default function StickyCallBar({ activeLoc }) {
+import { Ico } from './Icons'
+import { useApp } from './AppContext'
+
+export default function StickyCallBar() {
+  const { activeLoc } = useApp()
   return (
     <div className="bottom-bar">
       <a href={`tel:${activeLoc.phoneHref}`} className="btn btn-primary">

@@ -1,8 +1,12 @@
+'use client'
+
 import WaveMark from './WaveMark'
 import { Ico } from './Icons'
 import { openStatus } from '@/lib/utils'
+import { useApp } from './AppContext'
 
-export default function Topbar({ activeLoc }) {
+export default function Topbar() {
+  const { activeLoc } = useApp()
   const st = openStatus(activeLoc)
   return (
     <header className="topbar">
@@ -30,10 +34,11 @@ export default function Topbar({ activeLoc }) {
           </span>
         </a>
         <nav className="topbar-nav">
-          <a href="#categories">What we carry</a>
-          <a href="#why">Why us</a>
-          <a href="#reviews">Reviews</a>
+          {/* Todo: Add back in when we have imagery */}
+          {/* <a href="#categories">What we carry</a> */}
           <a href="#locations">Locations</a>
+          <a href="#reviews">Reviews</a>
+          <a href="#why">Why us</a>
         </nav>
         <a href={`tel:${activeLoc.phoneHref}`} className="topbar-call" aria-label={`Call ${activeLoc.phone}`}>
           <Ico.phone />

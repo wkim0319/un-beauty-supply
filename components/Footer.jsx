@@ -36,7 +36,8 @@ export default function Footer() {
 
           <div>
             <h4>Explore</h4>
-            <a href="#categories">What we carry</a>
+            {/* Todo: Add back in when we have imagery */}
+            {/* <a href="#categories">What we carry</a> */}
             <a href="#why">Why us</a>
             <a href="#reviews">Reviews</a>
             <a href="#locations">Hours &amp; directions</a>

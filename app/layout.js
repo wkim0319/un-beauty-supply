@@ -1,4 +1,6 @@
 import { Archivo, Archivo_Narrow, Inter, JetBrains_Mono } from 'next/font/google'
+import Script from 'next/script'
+import SchemaOrg from '@/components/SchemaOrg'
 import './globals.css'
 
 const archivo = Archivo({
@@ -30,9 +32,15 @@ const jetbrainsMono = JetBrains_Mono({
 })
 
 export const metadata = {
+  metadataBase: new URL('https://unbeautysupply.com'),
+  alternates: { canonical: '/' },
   title: "UN Beauty Supply — Detroit's Go-To Beauty Supply for 20+ Years",
   description:
     'Hair, wigs, braiding hair, styling tools & more. 3 stores across Metro Detroit. Real expert help in-store. Call or stop in today.',
+  icons: {
+    icon: '/favicon.ico',
+    apple: '/apple-touch-icon.png',
+  },
 }
 
 export default function RootLayout({ children }) {
@@ -41,7 +49,24 @@ export default function RootLayout({ children }) {
       lang="en"
       className={`${archivo.variable} ${archivoNarrow.variable} ${inter.variable} ${jetbrainsMono.variable}`}
     >
-      <body>{children}</body>
+      <head>
+        <SchemaOrg />
+      </head>
+      <body>
+        {children}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-DGV31HGQ9Q"
+          strategy="afterInteractive"
+        />
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-DGV31HGQ9Q');
+          `}
+        </Script>
+      </body>
     </html>
   )
 }

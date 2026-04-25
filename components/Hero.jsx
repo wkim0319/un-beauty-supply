@@ -1,4 +1,7 @@
+'use client'
+
 import { Ico } from './Icons'
+import { useApp } from './AppContext'
 
 function HeroCollage({ showStamp }) {
   return (
@@ -43,7 +46,10 @@ function HeroPoster({ showStamp }) {
   )
 }
 
-export default function Hero({ activeLoc, variant, showStamp }) {
+export default function Hero() {
+  const { activeLoc, tweak } = useApp()
+  const { heroVariant: variant, showStamp } = tweak
+
   return (
     <section className="hero" id="top" style={{ paddingTop: 40 }}>
       <div className="wrap">
@@ -66,9 +72,6 @@ export default function Hero({ activeLoc, variant, showStamp }) {
             </p>
 
             <div className="hero-cta">
-              <a href={`tel:${activeLoc.phoneHref}`} className="btn btn-primary">
-                <Ico.phone /> Call {activeLoc.phone}
-              </a>
               <a
                 href={`https://maps.google.com/?q=${activeLoc.mapsQuery}`}
                 target="_blank"
@@ -77,11 +80,14 @@ export default function Hero({ activeLoc, variant, showStamp }) {
               >
                 <Ico.pin /> Get directions
               </a>
+              <a href={`tel:${activeLoc.phoneHref}`} className="btn btn-primary">
+                <Ico.phone /> Call {activeLoc.phone}
+              </a>
             </div>
 
             <div className="hero-meta">
               <span className="pill">
-                <span className="stars">★★★★★</span> <b>4.8</b>&nbsp;· 1,200+ Google reviews
+                <span className="stars">★★★★★</span> <b>4.4</b>&nbsp;· 500+ Google reviews
               </span>
               <span className="pill">
                 <Ico.pin /> <b>3 locations</b>&nbsp;across Metro Detroit
