@@ -37,10 +37,6 @@ export const metadata = {
   title: "UN Beauty Supply — Detroit's Go-To Beauty Supply for 20+ Years",
   description:
     'Hair, wigs, braiding hair, styling tools & more. 3 stores across Metro Detroit. Real expert help in-store. Call or stop in today.',
-  icons: {
-    icon: '/favicon.ico',
-    apple: '/apple-touch-icon.png',
-  },
   openGraph: {
     title: "UN Beauty Supply — Detroit's Go-To Beauty Supply for 20+ Years",
     description:
