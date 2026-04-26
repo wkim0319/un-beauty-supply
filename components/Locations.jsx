@@ -1,5 +1,6 @@
 'use client'
 
+import { useRef, useEffect } from 'react'
 import { LOCATIONS } from '@/lib/data'
 import { DAY_ORDER, openStatus, getToday } from '@/lib/utils'
 import { Ico } from './Icons'
@@ -26,6 +27,14 @@ export default function Locations() {
   const active = LOCATIONS.find((l) => l.id === activeId)
   const today = getToday()
   const st = openStatus(active)
+  const headingRef = useRef(null)
+  const didMount = useRef(false)
+
+  useEffect(() => {
+    if (!didMount.current) { didMount.current = true; return }
+    headingRef.current?.scrollIntoView({ behavior: 'smooth', block: 'nearest' })
+    headingRef.current?.focus()
+  }, [activeId])
 
   return (
     <section
@@ -96,7 +105,7 @@ export default function Locations() {
             </div>
 
             <div className="loc-info">
-              <h3>{active.name}</h3>
+              <h3 ref={headingRef} tabIndex={-1} style={{ outline: 'none' }}>{active.name}</h3>
               <div className="addr-line">
                 {active.addr1}, {active.addr2}
               </div>

@@ -227,7 +227,7 @@ h2.section-h {
 }
 
 .hero .kicker {
-  display: inline-flex; align-items: center; gap: 10px;
+  display: inline-flex; align-items: flex-start; gap: 10px;
   background: #fff; border: 1px solid var(--line);
   padding: 6px 12px 6px 6px; border-radius: 999px;
   font-family: var(--font-jetbrains-mono), monospace; font-size: 12px;
@@ -417,7 +417,8 @@ h2.section-h {
   color: rgba(250,244,235,.6); letter-spacing: 0.08em; text-transform: uppercase;
   display: block; margin-top: 6px;
 }
-.trust-stats { display: flex; gap: 28px; flex-wrap: wrap; }
+.trust-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 28px; }
+@media (min-width: 720px) { .trust-stats { display: flex; gap: 28px; } }
 .trust-stat .n {
   font-family: var(--font-archivo), sans-serif; font-size: 34px; font-weight: 900;
   letter-spacing: -0.02em; line-height: 1;
@@ -551,8 +552,11 @@ h2.section-h {
 }
 .loc-info .addr-line { color: var(--ink-2); margin-bottom: 16px; }
 .loc-hours {
-  display: grid; grid-template-columns: 1fr 1fr;
-  gap: 6px 18px; font-size: 14px; margin-bottom: 20px;
+  display: grid; grid-template-columns: 1fr;
+  gap: 0; font-size: 14px; margin-bottom: 20px;
+}
+@media (min-width: 480px) {
+  .loc-hours { grid-template-columns: 1fr 1fr; gap: 6px 18px; }
 }
 .loc-hours div {
   display: flex; justify-content: space-between;

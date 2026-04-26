@@ -14,8 +14,8 @@ export default function Trust() {
               <div className="trust-stars">
                 <div>
                   <span className="gstars">★★★★★</span>
-                  <span style={{ display: 'block', marginTop: 6 }}>4.8 / 5</span>
-                  <span className="rating-sub">across 1,200+ reviews</span>
+                  <span style={{ display: 'block', marginTop: 6 }}>4.3 / 5</span>
+                  <span className="rating-sub">across 500+ reviews</span>
                 </div>
               </div>
             </div>
@@ -29,13 +29,13 @@ export default function Trust() {
                 <div className="l">Metro Detroit stores</div>
               </div>
               <div className="trust-stat">
-                <div className="n">600+</div>
+                <div className="n">100+</div>
                 <div className="l">Wig styles in stock</div>
               </div>
-              <div className="trust-stat">
+              {/* <div className="trust-stat">
                 <div className="n">98%</div>
                 <div className="l">Say they&apos;ll be back</div>
-              </div>
+              </div> */}
             </div>
           </div>
 
@@ -56,10 +56,10 @@ export default function Trust() {
           </div>
 
           <div className="trust-foot">
-            <span className="chip">Family-owned since 2004</span>
-            <span className="chip">Licensed &amp; insured</span>
-            <span className="chip">Detroit Black Chamber member</span>
-            <span className="chip">EBT accepted</span>
+            <span className="chip">Family-owned since 2000</span>
+            {/* <span className="chip">Licensed &amp; insured</span> */}
+            {/* <span className="chip">Detroit Black Chamber member</span> */}
+            {/* <span className="chip">EBT accepted</span> */}
           </div>
         </div>
       </div>
