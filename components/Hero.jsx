@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { Ico } from './Icons'
 import { useApp } from './AppContext'
 
@@ -7,13 +8,29 @@ function HeroCollage({ showStamp }) {
   return (
     <div className="collage" aria-hidden="true">
       <div className="tile t1">
-        <div className="ph"><span>model · wig A</span></div>
+        <Image
+          src="/hero-model.jpg"
+          alt="Model brushing long straight hair"
+          fill
+          style={{ objectFit: 'cover', objectPosition: '85% top' }}
+          priority
+        />
       </div>
       <div className="tile t2">
-        <div className="ph"><span>bundle stack</span></div>
+        <Image
+          src="/hero-products.jpg"
+          alt="Hair care products — brush, serums, scrunchie"
+          fill
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
+        />
       </div>
       <div className="tile t3">
-        <div className="ph"><span>styling tools</span></div>
+        <Image
+          src="/hero-makeup.jpg"
+          alt="Beauty makeup products flatlay"
+          fill
+          style={{ objectFit: 'cover', objectPosition: 'center' }}
+        />
       </div>
       <div className="tile t4">We speak<br />hair.</div>
       {showStamp && <div className="stamp">Family<br />owned<br />since &apos;04</div>}

@@ -14,7 +14,7 @@ export default function Trust() {
               <div className="trust-stars">
                 <div>
                   <span className="gstars">★★★★★</span>
-                  <span style={{ display: 'block', marginTop: 6 }}>4.3 / 5</span>
+                  <span style={{ display: 'block', marginTop: 6 }}>4 / 5</span>
                   <span className="rating-sub">across 500+ reviews</span>
                 </div>
               </div>
