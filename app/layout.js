@@ -34,11 +34,11 @@ const jetbrainsMono = JetBrains_Mono({
 export const metadata = {
   metadataBase: new URL('https://unbeauty.supply'),
   alternates: { canonical: '/' },
-  title: "UN Beauty Supply — Detroit's Go-To Beauty Supply for 20+ Years",
+  title: "UN Beauty Supply | Detroit's Go-To Beauty Supply for 20+ Years",
   description:
     'Hair, wigs, braiding hair, styling tools & more. 3 stores across Metro Detroit. Real expert help in-store. Call or stop in today.',
   openGraph: {
-    title: "UN Beauty Supply — Detroit's Go-To Beauty Supply for 20+ Years",
+    title: "UN Beauty Supply | Detroit's Go-To Beauty Supply for 20+ Years",
     description:
       'Hair, wigs, braiding hair, styling tools & more. 3 stores across Metro Detroit. Real expert help in-store.',
     url: 'https://unbeauty.supply',
@@ -48,7 +48,7 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "UN Beauty Supply — Detroit's Go-To Beauty Supply for 20+ Years",
+    title: "UN Beauty Supply | Detroit's Go-To Beauty Supply for 20+ Years",
     description:
       'Hair, wigs, braiding hair, styling tools & more. 3 stores across Metro Detroit.',
   },
